@@ -1,0 +1,238 @@
+<html>
+	<head>
+		<link rel="stylesheet" href="lib/bootstrap/css/bootstrap.css">
+		<link rel="stylesheet" href="lib/bootstrap/css/bootstrap-responsive.css">
+		<script src="lib/jquery/jquery-1.10.2.min.js"></script>
+		<script type="text/javascript">
+			$(document).ready(function(){
+				$("#btnLoadHtml").click(function(){
+					var html = getHtmlWithOffset(getBasicJSON());
+					$("#simpleGrid").html(html);
+				});
+			});
+
+			function getBasicJSON(){
+				var arr = [
+					{xIndex:2, yIndex:0, width:2, height:1},
+					{xIndex:4, yIndex:0, width:4, height:1},
+					{xIndex:5, yIndex:1, width:4, height:1},
+					{xIndex:9, yIndex:1, width:2, height:1},
+					{xIndex:3, yIndex:2, width:5, height:1},
+					{xIndex:9, yIndex:2, width:3, height:1},
+					{xIndex:0, yIndex:3, width:4, height:1},
+					{xIndex:7, yIndex:3, width:5, height:1}
+				];
+
+				return arr;
+			}
+
+			function addOffset(arr){
+				if(!(arr) || arr.length===0){
+					//should throw an error
+					return arr;
+				}
+				var row = arr[0].yIndex;
+				var divArr = [];
+				for(var i=0; i<arr.length; i++){
+					if(row === arr[i].yIndex){
+
+					}
+				}
+		
+			}
+
+			function getHtmlWithOffset(arr){
+				console.log(arr);
+				if(!(arr) || arr.length===0){
+					return '';
+				}
+				var html = '<div class="row">';
+				var row = arr[0].yIndex;
+				var offset = 0;
+				var totalX = arr[0].xIndex;
+				var column = arr[0].width;
+				var isInit = true;
+				for(var i=0; i<arr.length; i++){
+					offset = arr[i].xIndex - totalX;
+					if(row != arr[i].yIndex){
+						html += '</div>';
+						html += '<div class="row">';
+						row = arr[i].yIndex ;
+						totalX = arr[i].xIndex;
+						offset = arr[i].xIndex;
+					}
+					else if(isInit){
+						offset = arr[i].xIndex;
+						isInit = false;
+					}
+					totalX += arr[i].width;
+
+					console.log("Offset : " + offset);
+					if(!(offset) || offset === 0){
+						html +='<div class="col-md-' + arr[i].width + '">.col-md-'+ arr[i].width +'</div>';
+					}
+					else{
+						html +='<div class="col-md-' + arr[i].width + ' col-md-offset-'+ offset +' ">.col-md-'+ arr[i].width + ' .col-md-offset-' + offset +'</div>';
+					}	
+					
+				}
+
+				html += '</div>';
+				
+				return html;
+			}
+
+			function getHTML(arr){
+				console.log(arr);
+				if(!(arr) || arr.length===0){
+					return '';
+				}
+				var html = '<div class="row">';
+				var row = arr[0].yIndex;
+				for(var i=0; i<arr.length; i++){
+					if(row != arr[i].yIndex){
+						html += '</div>';
+						html += '<div class="row">';
+						row = arr[i].yIndex ;
+					}
+					html +='<div class="col-md-' + arr[i].width + '">.col-md-'+ arr[i].width +'</div>';
+					
+				}
+
+				html += '</div>';
+				
+				return html;
+			}
+
+
+
+		</script>
+		<style>
+			div [class^=col-] {
+				padding-top: 10px;
+				padding-bottom: 10px;
+				background-color: #eee;
+				background-color: rgba(86,61,124,.15);
+				border: 1px solid #ddd;
+				border: 1px solid rgba(86,61,124,.2);
+			}
+		</style>
+	</head>
+	<body>
+		<br/>
+		<button id="btnLoadHtml" class="primary"> Load Grid </button>
+		<br/>
+		<h3 id="grid-example-basic">Example: Testing Simple</h3>
+			<div id="simpleGrid">
+			</div>
+		<br/><br/>
+		<h3 id="grid-example-basic">Example: Stacked-to-horizontal</h3>
+
+		<div class="row">
+		  <div class="col-md-1">.col-md-1</div>
+		  <div class="col-md-1">.col-md-1</div>
+		  <div class="col-md-1">.col-md-1</div>
+		  <div class="col-md-1">.col-md-1</div>
+		  <div class="col-md-1">.col-md-1</div>
+		  <div class="col-md-1">.col-md-1</div>
+		  <div class="col-md-1">.col-md-1</div>
+		  <div class="col-md-1">.col-md-1</div>
+		  <div class="col-md-1">.col-md-1</div>
+		  <div class="col-md-1">.col-md-1</div>
+		  <div class="col-md-1">.col-md-1</div>
+		  <div class="col-md-1">.col-md-1</div>
+		</div>
+		<div class="row">
+		  <div class="col-md-8">.col-md-8</div>
+		  <div class="col-md-4">.col-md-4</div>
+		</div>
+		<div class="row">
+		  <div class="col-md-4">.col-md-4</div>
+		  <div class="col-md-4">.col-md-4</div>
+		  <div class="col-md-4">.col-md-4</div>
+		</div>
+		<div class="row">
+		  <div class="col-md-6">.col-md-6</div>
+		  <div class="col-md-6">.col-md-6</div>
+		</div>
+
+		<br/><br/>
+		<h3 id="grid-example-basic">Example: Fluid Container</h3>
+		<div class="row">
+		  <div class="col-xs-12 col-md-8">.col-xs-12 .col-md-8</div>
+		  <div class="col-xs-6 col-md-4">.col-xs-6 .col-md-4</div>
+		</div>
+
+		<!-- Columns start at 50% wide on mobile and bump up to 33.3% wide on desktop -->
+		<div class="row">
+		  <div class="col-xs-6 col-md-4">.col-xs-6 .col-md-4</div>
+		  <div class="col-xs-6 col-md-4">.col-xs-6 .col-md-4</div>
+		  <div class="col-xs-6 col-md-4">.col-xs-6 .col-md-4</div>
+		</div>
+
+		<!-- Columns are always 50% wide, on mobile and desktop -->
+		<div class="row">
+		  <div class="col-xs-6">.col-xs-6</div>
+		  <div class="col-xs-6">.col-xs-6</div>
+		</div>
+
+		<br/><br/>
+		<h3 id="grid-example-basic">Example: Responsive column resets</h3>
+
+		<div class="row">
+		  <div class="col-xs-6 col-sm-3">.col-xs-6 .col-sm-3</div>
+		  <div class="col-xs-6 col-sm-3">.col-xs-6 .col-sm-3</div>
+
+		  <!-- Add the extra clearfix for only the required viewport -->
+		  <div class="clearfix visible-xs"></div>
+
+		  <div class="col-xs-6 col-sm-3">.col-xs-6 .col-sm-3</div>
+		  <div class="col-xs-6 col-sm-3">.col-xs-6 .col-sm-3</div>
+		</div>
+
+		<br/><br/>
+		<h3 id="grid-example-basic">Example: Offsetting columns</h3>
+
+		<div class="row">
+		  <div class="col-md-4">.col-md-4</div>
+		  <div class="col-md-4 col-md-offset-4">.col-md-4 .col-md-offset-4</div>
+		</div>
+		<div class="row">
+		  <div class="col-md-3 col-md-offset-3">.col-md-3 .col-md-offset-3</div>
+		  <div class="col-md-3 col-md-offset-3">.col-md-3 .col-md-offset-3</div>
+		</div>
+		<div class="row">
+		  <div class="col-md-6 col-md-offset-3">.col-md-6 .col-md-offset-3</div>
+		</div>
+
+		<br/><br/>
+		<h3 id="grid-example-basic">Example: Nesting columns</h3>
+
+		<div class="row">
+		  <div class="col-md-9">
+		    Level 1: .col-md-9
+		    <div class="row">
+		      <div class="col-md-6">
+		        Level 2: .col-md-6
+		      </div>
+		      <div class="col-md-6">
+		        Level 2: .col-md-6
+		      </div>
+		    </div>
+		    <div class="row">
+		      <div class="col-md-2 col-md-offset-3">
+		        Level 2: .col-md-2 .col-md-offset-3
+		      </div>
+		      <div class="col-md-3 col-md-offset-1">
+		        Level 2: .col-md-3 .col-md-offset-1
+		        <div class="row">
+			    	<div class="col-md-6">
+			         Level 3: .col-md-6
+			      	</div>
+		      </div>
+		    </div>
+		  </div>
+		</div>
+
+	</body>
+</html>
