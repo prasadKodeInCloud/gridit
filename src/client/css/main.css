@@ -1,0 +1,83 @@
+      body {
+        margin: 0px;
+        padding: 0px;
+		background-color: #AEB1B1;
+		font-family:"Segoe UI","Segoe WP","Helvetica Neue",sans-serif
+		
+      }
+	  .stage{
+		background-color: #FFFFFF; 
+		width:640px; 
+		height:760px; 
+		margin-left:auto; 
+		margin-right:auto;
+		margin-top:20px;
+		margin-bottom:20px;
+		box-shadow: 0 0 2px 2px #9A959B;
+	  }
+	  .kineticjs-content{
+		margin-left:20px; 
+		margin-top:20px;
+	  }
+	  .panel{
+		background-color: #FFFFFF;
+		box-shadow: 0 0 2px 2px #666666;
+		height: 100%;
+		overflow-y: auto;
+		position: fixed;
+		transition: all 250ms ease 0s;
+	  }
+	  .properties-panel{
+		right: 0;
+		top: 68px;
+		width: 200px;
+	  }
+	  .toolbar-panel{
+		left: 190px;
+		top: 68px;
+		width: 120px;
+		height:760px;
+	  }
+	  h4 {
+		background-color: #373D38;
+		color: #FFFFFF;
+		margin: 0;
+		padding: 0.2em 0;
+		text-align: center;
+	  }
+	  .component{
+		background-color: #E7E7F7;
+		width:92px;
+		padding:5px;
+		margin:5px 8px;
+		text-align: center;
+		border:1px solid #B2BBEC;
+	  }
+	  .component:hover{
+		cursor:move
+	  }
+
+	  .grid-container{
+    	width: 95%;
+    	margin-left: auto;
+    	margin-right: auto;
+	  }
+
+	  div [class^=col-] {
+		padding-top: 10px;
+		padding-bottom: 10px;
+		background-color: #eee;
+		background-color: rgba(86,61,124,.15);
+		border: 1px solid #ddd;
+		border: 1px solid rgba(86,61,124,.2);
+	  }
+
+	  [draggable] {
+		  -moz-user-select: none;
+		  -khtml-user-select: none;
+		  -webkit-user-select: none;
+		  user-select: none;
+		  /* Required to make elements draggable in old WebKit */
+		  -khtml-user-drag: element;
+		  -webkit-user-drag: element;
+	}

@@ -1,0 +1,80 @@
+
+  <head>
+
+  </head>
+  <body>
+	 <ul class="nav nav-tabs" id="griditTabs">
+  <li><a href="#tabEditor" data-toggle="tab">Editor</a></li>
+  <li><a href="#tabGrid" data-toggle="tab">Grid</a></li>
+  
+</ul>
+
+<!-- Tab panes -->
+	<div class="tab-content">
+		<div class="tab-pane active" id="tabEditor">
+			<div id="stage" class="stage"  ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+			<div id="toolbar" class="panel toolbar-panel" >
+				<h4>Toolbox</h4>
+				<div class="component" id = "rectangle_1" draggable="true" >col-01</div>
+				<div class="component" id = "rectangle_2" draggable="true" >col-02</div>
+				<div class="component" id = "rectangle_3" draggable="true" >col-03</div>
+				<div class="component" id = "rectangle_4" draggable="true" >col-04</div>
+				<div class="component" id = "rectangle_5" draggable="true" >col-05</div>
+				<div class="component" id = "rectangle_6" draggable="true" >col-06</div>
+				<div class="component" id = "rectangle_7" draggable="true" >col-07</div>
+				<div class="component" id = "rectangle_8" draggable="true" >col-08</div>
+				<div class="component" id = "rectangle_9" draggable="true" >col-09</div>
+				<div class="component" id = "rectangle_10" draggable="true" >col-10</div>
+				<div class="component" id = "rectangle_11" draggable="true" >col-11</div>
+				<div class="component" id = "rectangle_12" draggable="true" >col-12</div>
+			</div>  
+			<div id="panel" class="panel properties-panel" >
+				<h4>Properties</h4>	
+				 <button id="infoButton" style="margin: 10px 10px 10px 30px; padding: 10px;">Div info</button>
+				 <button id="gridsterBootstripyButton" style="margin: 10px 10px 10px 30px; padding: 10px;">Gridster-Boostrify</button>
+				</h4>
+			</div> 
+			<div class="contextMenu" id="myMenu1">
+			  <ul>
+				<li id="delete">Delete</li>
+			  </ul>
+			</div>
+		</div>
+		<div class="tab-pane grid-container" id="tabGrid">
+			<h3 id="grid-example-basic">Example: Stacked-to-horizontal</h3>
+			<div class="row">
+			  <div class="col-md-1">.col-md-1</div>
+			  <div class="col-md-1">.col-md-1</div>
+			  <div class="col-md-1">.col-md-1</div>
+			  <div class="col-md-1">.col-md-1</div>
+			  <div class="col-md-1">.col-md-1</div>
+			  <div class="col-md-1">.col-md-1</div>
+			  <div class="col-md-1">.col-md-1</div>
+			  <div class="col-md-1">.col-md-1</div>
+			  <div class="col-md-1">.col-md-1</div>
+			  <div class="col-md-1">.col-md-1</div>
+			  <div class="col-md-1">.col-md-1</div>
+			  <div class="col-md-1">.col-md-1</div>
+			</div>
+			<div class="row">
+			  <div class="col-md-8">.col-md-8</div>
+			  <div class="col-md-4">.col-md-4</div>
+			</div>
+			<div class="row">
+			  <div class="col-md-4">.col-md-4</div>
+			  <div class="col-md-4">.col-md-4</div>
+			  <div class="col-md-4">.col-md-4</div>
+			</div>
+			<div class="row">
+			  <div class="col-md-6">.col-md-6</div>
+			  <div class="col-md-6">.col-md-6</div>
+			</div>
+		</div>
+		
+	</div>
+	
+	
+	
+    
+  </body>
+
