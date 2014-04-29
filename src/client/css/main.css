@@ -1,7 +1,6 @@
       body {
         margin: 0px;
         padding: 0px;
-		background-color: #AEB1B1;
 		font-family:"Segoe UI","Segoe WP","Helvetica Neue",sans-serif
 		
       }
@@ -70,6 +69,7 @@
 		background-color: rgba(86,61,124,.15);
 		border: 1px solid #ddd;
 		border: 1px solid rgba(86,61,124,.2);
+		font-size: 12px;
 	  }
 
 	  [draggable] {
