@@ -72,6 +72,11 @@
 		font-size: 12px;
 	  }
 
+	  .graybox {
+		background-color: rgba(12, 3, 140, 0.5);
+		border: 1px solid #FFFFFF;
+	  }
+
 	  [draggable] {
 		  -moz-user-select: none;
 		  -khtml-user-select: none;
@@ -81,3 +86,5 @@
 		  -khtml-user-drag: element;
 		  -webkit-user-drag: element;
 	}
+
+	@media (min-width: 992px) { .row {height:42px;}}
