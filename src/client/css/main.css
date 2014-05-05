@@ -87,4 +87,14 @@
 		  -webkit-user-drag: element;
 	}
 
+	.share {
+		margin: 10px 10px 10px 18px; padding: 10px;
+		font-size: 18px;
+	}
+
+	.share a:hover{
+    	text-decoration: none;
+    	opacity: 0.5;
+	}
+
 	@media (min-width: 992px) { .row {height:42px;}}
