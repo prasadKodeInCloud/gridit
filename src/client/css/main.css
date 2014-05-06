@@ -97,4 +97,10 @@
     	opacity: 0.5;
 	}
 
+	.disqus-container{
+		padding: 40px;
+		width: 70%;	
+		margin-left: 7%;
+	}
+
 	@media (min-width: 992px) { .row {height:42px;}}
