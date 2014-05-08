@@ -1,0 +1,155 @@
+<html>
+  	<head>
+		<link rel="stylesheet" href="../../responsive/lib/bootstrap/css/bootstrap.css">
+		<script src="../../responsive/lib/jquery/jquery-1.10.2.min.js"></script>
+		<script type="text/javascript">
+			$(function() {
+				$(window).bind('resize', function(){
+					onWindowResize();
+				}).trigger('resize');
+			});
+			
+			function onWindowResize(){
+				console.log($('#simpleGrid').width());
+				$(".row-empty").css("height", $('#div-second-container').height()/7 -2) ;
+			}
+		</script>
+		<style type="text/css">
+			body {
+				margin: 0px;
+				padding: 0px;
+				font-family:"Segoe UI","Segoe WP","Helvetica Neue",sans-serif
+				color: #3A4145;
+				background-color:#eee;
+			}
+			 
+			div [class^=col-] {
+				padding-top: 10px;
+				padding-bottom: 10px;
+				background-color: #eee;
+				background-color: rgba(86,61,124,.15);
+				border: 1px solid #ddd;
+				font-size: 12px;
+			}
+			.col-md-12{
+				padding-left:0;
+				padding-right:0;
+			}
+			.row{
+				margin-left:0;
+				margin-right:0;
+			}
+			
+			.row-empty{
+				
+			}
+			
+			#col-custom-last{
+				background-color: black;
+				padding: 4%;
+				color: rgb(186, 180, 180);
+				font-size: 18px;
+				line-height: 27px;
+				min-height:312px;
+			}
+			
+			#col-custom-second{
+			    background-color: rgb(223, 214, 214);
+				padding: 4%;
+				color: rgb(90, 85, 85);
+				font-size: 18px;
+				line-height: 27px;
+				min-height:312px;
+			}
+			
+			@media (max-width: 768px) {.row-empty{display:none} h1 {font-size: 1.5em;} h2 {font-size: 1.2em;}}
+			@media (min-width: 768px) { .col-bottom {margin-top:-336px;} .row-empty{display:none} h1 {font-size: 2.8em;} h2 {font-size: 1.8em;}}  
+			@media (min-width: 992px) { .row {height:42px;} .col-bottom {margin-top:0px;} .row-empty{display:block} h1 {font-size: 3.0em;} h2 {font-size: 2.2em;}}
+			
+			#col-custom-first{
+				background-color: white;
+				padding: 4%;
+				font-size: 18px;
+				line-height: 27px;
+			}
+			
+			h1 {
+				line-height: 1.2em;
+				letter-spacing: -1px;
+				text-indent: -2px;
+			}
+		
+			h1, h2, h3, h4, h5, h6 {
+				text-rendering: optimizeLegibility;
+				line-height: 1;
+				margin-top: 0;
+				font-family: 'Open Sans', sans-serif;
+			}
+		
+		</style>
+	</head>
+	<body>
+		<div id="simpleGrid" class="container-fluid" style="min-height:800px;padding:10px;">
+		   
+            <div class="row col-md-12">
+                <div class="col-md-8" style="min-height: 672px;">
+					<div id="col-custom-first">
+						<h1 id="introduction">Responsive Bootstrap Layout Designing Tool</h1>
+						
+						<h2 id="introduction">Introduction</h2>
+						<br/>
+						<p>
+							A few weeks ago i saw
+							<a href="https://nadeesha.silvrback.com/gridster-boostroap-0-1">a post by Nadeeka</a>
+							on creating a twitter
+							<a href="http://getbootstrap.com/">bootstrap</a>
+							layout generation plugin for
+							<a href="http://gridster.net/">gridster</a>
+							. I tested the plugin and the layout generation part was fine for the selected use case. But I realized that gridster is not the best tool to support layout generation since,
+						</p>
+						<p>
+							The grid layout in editor represents html container with 12 columns grid system. You can simply drag n drop divs to the container with exact column sizes using the elements in toolbox. For an example col-07 represents a div with 7 columns and 1 row. You can resize a selected div using the pointers.
+						</p>
+						<br/><br/>
+						<h2>Improvements</h2>
+						<br/>
+						<p>
+							As I experienced drag n drop code generating editors rarely completely solve an addressed problem. This is applicable to the
+							<strong>gridit</strong>
+							as well. Currently the tool only allows generating layouts for medium devices
+							<strong>(col-md)</strong>
+							. For now, this tool is helpful to the ui designers at least to some extent as I believe.
+						</p>
+					</div>
+				</div>
+                <div class="col-md-4 col-sm-6" id="div-second-container" style="min-height: 336px;">
+					<div id="col-custom-second">	
+						<p>
+							Andersson-Wise is an architecture & design studio based in Austin, Texas. Our collaborative approach to residential, institutional, and hospitality architecture results in precise solutions carefully attuned to their purpose.
+						</p>
+						<p>
+							Andersson-Wise is an architecture & design studio based in Austin, Texas. Our collaborative approach.
+						</p>	
+					</div>
+				</div>
+            </div>
+            <div class="row row-empty col-md-12"></div>
+            <div class="row row-empty col-md-12"></div>
+            <div class="row row-empty col-md-12"></div>
+            <div class="row row-empty col-md-12"></div>
+            <div class="row row-empty col-md-12"></div>
+            <div class="row row-empty col-md-12"></div>
+            <div class="row row-empty col-md-12"></div>
+            <div class="row col-md-12" id="div-last-container">
+                <div class="col-md-4 col-md-offset-8 col-sm-6 col-sm-offset-6 col-bottom" style="min-height: 336px;">
+					<div id="col-custom-last">	
+						<p>
+							Andersson-Wise is an architecture & design studio based in Austin, Texas. Our collaborative approach to residential, institutional, and hospitality architecture results in precise solutions carefully attuned to their purpose.
+						</p>
+					</div>
+				</div>
+            </div>
+		  
+		</div>
+	</body>
+</html>
