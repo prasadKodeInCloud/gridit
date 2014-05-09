@@ -10,8 +10,14 @@
 			});
 			
 			function onWindowResize(){
-				console.log($('#simpleGrid').width());
-				$(".row-empty").css("height", $('#div-second-container').height()/7 -2) ;
+				$("#img-cmb-hack").css("width",  $('#col-custom-first').width() - 4 );
+				if($('#simpleGrid').width() > 768){
+					$(".row-empty").css("height", $('#div-second-container').height()/7 -2) ;
+				}
+				else{
+					$("p").css("font-size", 20 - Math.floor(1000/$('#simpleGrid').width()));
+					$("p").css("line-height", 28 - Math.floor(1000/$('#simpleGrid').width()) + "px");
+				}
 			}
 		</script>
 		<style type="text/css">
@@ -39,6 +45,7 @@
 			.row{
 				margin-left:0;
 				margin-right:0;
+
 			<!--	background-color: rgba(200,61,30,.15);
 			<!--	border: 1px solid #ff0000;
 			}
@@ -46,37 +53,39 @@
 			.row-empty{
 			<!--	background-color: rgba(20,200,30,.15); -->
 			<!--	border: 1px solid #00ff00; -->
+				z-index: -1000;
 			}
 			
-			
-			#col-custom-last{
-				background-color: black;
-				padding: 4%;
-				color: rgb(186, 180, 180);
-				font-size: 18px;
+			p{
+				font-size: 19px;
 				line-height: 27px;
-				min-height:312px;
 			}
-			
+
+			#col-custom-first{
+				background-color: white;
+				padding: 4%;
+				min-height:800px;
+			}
+
 			#col-custom-second{
 			    background-color: rgb(223, 214, 214);
 				padding: 4%;
 				color: rgb(90, 85, 85);
-				font-size: 18px;
-				line-height: 27px;
+				min-height:312px;
+			}
+
+			#col-custom-last{
+				background-color: black;
+				padding: 4%;
+				color: rgb(186, 180, 180);
 				min-height:312px;
 			}
 			
 			@media (max-width: 768px) {.row-empty{display:none} h1 {font-size: 1.5em;} h2 {font-size: 1.2em;}}
 			@media (min-width: 768px) { .col-bottom {margin-top:-336px;} .row-empty{display:none} h1 {font-size: 2.8em;} h2 {font-size: 1.8em;}}  
-			@media (min-width: 992px) { .row {height:42px;} .col-bottom {margin-top:0px;} .row-empty{display:block} h1 {font-size: 3.0em;} h2 {font-size: 2.2em;}}
+			@media (min-width: 992px) { .row {height:42px;} .col-bottom {margin-top:0px;} .row-empty{display:block} h1 {font-size: 3.0em;} h2 {font-size: 2.2em;} }
 			
-			#col-custom-first{
-				background-color: white;
-				padding: 4%;
-				font-size: 18px;
-				line-height: 27px;
-			}
+			
 			
 			h1 {
 				line-height: 1.2em;
@@ -112,6 +121,9 @@
 							<a href="http://gridster.net/">gridster</a>
 							. I tested the plugin and the layout generation part was fine for the selected use case. But I realized that gridster is not the best tool to support layout generation since,
 						</p>
+						<br/>
+						<img id="img-cmb-hack" alt="CMB Hack" width="600px" src="../../img/cmb-hack.jpg" />
+						<br/><br/>
 						<p>
 							The grid layout in editor represents html container with 12 columns grid system. You can simply drag n drop divs to the container with exact column sizes using the elements in toolbox. For an example col-07 represents a div with 7 columns and 1 row. You can resize a selected div using the pointers.
 						</p>

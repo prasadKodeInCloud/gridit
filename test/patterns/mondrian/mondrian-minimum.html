@@ -1,0 +1,118 @@
+<html>
+  	<head>
+		<link rel="stylesheet" href="../../responsive/lib/bootstrap/css/bootstrap.css">
+		<script src="../../responsive/lib/jquery/jquery-1.10.2.min.js"></script>
+		<script type="text/javascript">
+			$(function() {
+				$(window).bind('resize', function(){
+					onWindowResize();
+				}).trigger('resize');
+			});
+			
+			function onWindowResize(){
+				if($('#simpleGrid').width() > 768){
+					$(".row-empty").css("height", $('#div-second-container').height()/7 -2) ;
+				}
+			}
+		</script>
+		<style type="text/css">
+			body {
+				margin: 0px;
+				padding: 0px;
+				font-family:"Segoe UI","Segoe WP","Helvetica Neue",sans-serif
+				color: #3A4145;
+				background-color:#eee;
+			}
+			 
+			div [class^=col-] {
+				padding-top: 10px;
+				padding-bottom: 10px;
+				background-color: #eee;
+				background-color: rgba(86,61,124,.15); 
+				border: 1px solid #ddd; 
+				font-size: 12px;
+			}
+			.col-md-12{
+				padding-left:0;
+				padding-right:0;
+			}
+		
+			.row{
+				margin-left:0;
+				margin-right:0;
+			<!--	background-color: rgba(200,61,30,.15);
+			<!--	border: 1px solid #ff0000;
+			}
+			
+			.row-empty{
+				background-color: rgba(20,200,30,.15);
+				border: 1px solid #00ff00;
+				z-index: -1000;
+			}
+			
+			
+			.div-containder{
+				padding: 4%;
+				font-size: 18px;
+				line-height: 27px;
+			}
+			
+			#col-custom-first{
+				background-color: rgb(185, 211, 209);
+				min-height: 652px;
+			}
+
+			#col-custom-second{
+			    background-color: rgb(223, 214, 214);
+				color: rgb(90, 85, 85);
+				min-height:312px;
+			}
+
+			#col-custom-last{
+				background-color: black;
+				color: rgb(186, 180, 180);
+				min-height:312px;
+			}
+			
+			@media (max-width: 768px) {.row-empty{display:none} }
+			@media (min-width: 768px) { .col-bottom {margin-top:-336px;} .row-empty{display:none} }  
+			@media (min-width: 992px) { .row {height:42px;} .col-bottom {margin-top:0px;} .row-empty{display:block} }
+			
+
+		
+		</style>
+	</head>
+	<body>
+		<div id="simpleGrid" class="container-fluid" style="min-height:800px;padding:10px;">
+		   
+            <div class="row col-md-12">
+                <div class="col-md-8" style="min-height: 672px;">
+					<div class="div-containder" id="col-custom-first" style="">
+						<p> Div - 1</p>
+					</div>
+				</div>
+                <div class="col-md-4 col-sm-6" id="div-second-container" style="min-height: 336px;">
+					<div class="div-containder" id="col-custom-second">	
+						<p> Div - 2</p>
+					</div>
+				</div>
+            </div>
+            <div class="row row-empty col-md-12"></div>
+            <div class="row row-empty col-md-12"></div>
+            <div class="row row-empty col-md-12"></div>
+            <div class="row row-empty col-md-12"></div>
+            <div class="row row-empty col-md-12"></div>
+            <div class="row row-empty col-md-12"></div>
+            <div class="row row-empty col-md-12"></div>
+            <div class="row col-md-12" id="div-last-container">
+                <div class="col-md-4 col-md-offset-8 col-sm-6 col-sm-offset-6 col-bottom" style="min-height: 336px;">
+					<div class="div-containder" id="col-custom-last">	
+						<p> Div - 3</p>
+							
+					</div>
+				</div>
+            </div>
+		  
+		</div>
+	</body>
+</html>
