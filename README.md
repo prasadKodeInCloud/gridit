@@ -3,7 +3,7 @@ Grid-It
 
 Responsive layout designing online tool for twitter bootstrap.
 
-Description is available in http://prasad19sara.ghost.io/bootstrap-responsive-layout-designer blog post.
+Description is available in https://prasad19sara.silvrback.com/bootstrap-responsive-layout-designer
 
 
 http://gridit.meteor.com/
